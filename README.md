@@ -1,6 +1,8 @@
 # House Rental Android Application
 
-This repository contains the Android version of a full-stack house rental application. The web version is maintained in a separate repository. The project aims to provide a platform for users to rent houses and apartments, with the following key features:
+This repository contains the Android version of a full-stack house rental application. The web version is maintained in a separate repository. The project aims to provide a platform for users to rent houses and apartments, with the following key features:<br/>
+
+<sub> ****P.S.*** The project was completed under CSE327 (Software Engineering) course offered by North South University.*<sub/>
 
 ## Key Features
 
