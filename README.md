@@ -35,7 +35,7 @@ The following features are planned for future implementation:
 
 ## Installation and Setup
 
-1. Clone the repository: `git clone https://github.com/your-username/android-repo.git`
+1. Clone the repository.
 2. Open the project in Android Studio.
 3. Set up the required dependencies and SDKs.
 4. Build and run the app on an Android device or emulator.
