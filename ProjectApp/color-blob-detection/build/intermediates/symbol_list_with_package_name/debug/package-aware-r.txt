@@ -1,0 +1,11 @@
+org.opencv.samples.colorblobdetect
+attr camera_id
+attr show_fps
+drawable icon
+id any
+id back
+id color_blob_detection_activity_surface_view
+id front
+layout color_blob_detection_surface_view
+string app_name
+styleable CameraBridgeViewBase camera_id show_fps

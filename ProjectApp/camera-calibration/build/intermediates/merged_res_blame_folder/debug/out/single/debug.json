@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "org.opencv.samples.cameracalibration.camera-calibration-merged_res-5:/layout_camera_calibration_surface_view.xml.flat",
+        "source": "org.opencv.samples.cameracalibration.camera-calibration-camera-calibration-6:/layout/camera_calibration_surface_view.xml"
+    },
+    {
+        "merged": "org.opencv.samples.cameracalibration.camera-calibration-merged_res-5:/drawable_icon.png.flat",
+        "source": "org.opencv.samples.cameracalibration.camera-calibration-camera-calibration-6:/drawable/icon.png"
+    },
+    {
+        "merged": "org.opencv.samples.cameracalibration.camera-calibration-merged_res-5:/menu_calibration.xml.flat",
+        "source": "org.opencv.samples.cameracalibration.camera-calibration-camera-calibration-6:/menu/calibration.xml"
+    }
+]

@@ -1,0 +1,29 @@
+org.opencv.samples.cameracalibration
+attr camera_id
+attr show_fps
+drawable icon
+id any
+id back
+id calibrate
+id calibration
+id camera_calibration_java_surface_view
+id comparison
+id front
+id preview_mode
+id undistortion
+layout camera_calibration_surface_view
+menu calibration
+string action_calibrate
+string app_name
+string calibrating
+string calibration
+string calibration_successful
+string calibration_unsuccessful
+string comparison
+string more_samples
+string original
+string please_wait
+string preview_mode
+string undistorted
+string undistortion
+styleable CameraBridgeViewBase camera_id show_fps

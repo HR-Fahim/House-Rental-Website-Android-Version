@@ -1,0 +1,6 @@
+R_DEF: Internal format may change without notice
+local
+drawable icon
+id color_blob_detection_activity_surface_view
+layout color_blob_detection_surface_view
+string app_name

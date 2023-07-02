@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Home"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/postAdButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Post Ad Now!" />
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Search" />
+
+    <Button
+        android:id="@+id/voiceSearchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Voice" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/adsLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="30dp">
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/camera_ar_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Camera AR" />
+
+    <Button
+        android:id="@+id/camera_vr_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Camera VR" />
+
+</LinearLayout>
+
+

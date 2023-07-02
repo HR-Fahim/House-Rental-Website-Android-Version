@@ -1,0 +1,9 @@
+org.opencv.samples.colorblobdetect.color-blob-detection-pngs-0 C:\Users\Asus\Desktop\IDE\ProjectApp\color-blob-detection\build\generated\res\pngs\debug
+org.opencv.samples.colorblobdetect.color-blob-detection-resValues-1 C:\Users\Asus\Desktop\IDE\ProjectApp\color-blob-detection\build\generated\res\resValues\debug
+org.opencv.samples.colorblobdetect.color-blob-detection-rs-2 C:\Users\Asus\Desktop\IDE\ProjectApp\color-blob-detection\build\generated\res\rs\debug
+org.opencv.samples.colorblobdetect.color-blob-detection-packageDebugResources-3 C:\Users\Asus\Desktop\IDE\ProjectApp\color-blob-detection\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+org.opencv.samples.colorblobdetect.color-blob-detection-packageDebugResources-4 C:\Users\Asus\Desktop\IDE\ProjectApp\color-blob-detection\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+org.opencv.samples.colorblobdetect.color-blob-detection-merged_res-5 C:\Users\Asus\Desktop\IDE\ProjectApp\color-blob-detection\build\intermediates\merged_res\debug
+org.opencv.samples.colorblobdetect.color-blob-detection-color-blob-detection-6 C:\Users\Asus\Desktop\IDE\ProjectApp\color-blob-detection\res
+org.opencv.samples.colorblobdetect.color-blob-detection-debug-7 C:\Users\Asus\Desktop\IDE\ProjectApp\color-blob-detection\src\debug\res
+org.opencv.samples.colorblobdetect.color-blob-detection-packaged_res-8 C:\Users\Asus\Desktop\IDE\ProjectApp\opencv-sdk\build\intermediates\packaged_res\debug

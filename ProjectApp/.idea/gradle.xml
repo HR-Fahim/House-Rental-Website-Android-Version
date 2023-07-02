@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/15-puzzle" />
+            <option value="$PROJECT_DIR$/OpenCV-android-sdk" />
+            <option value="$PROJECT_DIR$/VuforiaSamples" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/camera-calibration" />
+            <option value="$PROJECT_DIR$/color-blob-detection" />
+            <option value="$PROJECT_DIR$/libs" />
+            <option value="$PROJECT_DIR$/opencv" />
+            <option value="$PROJECT_DIR$/opencv-sdk" />
+            <option value="$PROJECT_DIR$/samples" />
+            <option value="$PROJECT_DIR$/samples/sdk-controllerclient" />
+            <option value="$PROJECT_DIR$/samples/sdk-hellovr" />
+            <option value="$PROJECT_DIR$/samples/sdk-video360" />
+            <option value="$PROJECT_DIR$/samples/sdk-videoplayer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

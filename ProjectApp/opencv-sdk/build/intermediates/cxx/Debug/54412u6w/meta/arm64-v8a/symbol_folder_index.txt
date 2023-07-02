@@ -1,0 +1,1 @@
+C:\Users\Asus\Desktop\IDE\ProjectApp\opencv-sdk\build\intermediates\cxx\Debug\54412u6w\obj\arm64-v8a

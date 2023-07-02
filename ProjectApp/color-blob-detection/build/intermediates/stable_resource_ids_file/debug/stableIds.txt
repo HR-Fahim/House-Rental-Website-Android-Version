@@ -1,0 +1,12 @@
+org.opencv.samples.colorblobdetect:id/resultTextView = 0x7f030005
+org.opencv.samples.colorblobdetect:id/front = 0x7f030003
+org.opencv.samples.colorblobdetect:id/any = 0x7f030000
+org.opencv.samples.colorblobdetect:id/color_blob_detection_activity_surface_view = 0x7f030002
+org.opencv.samples.colorblobdetect:drawable/icon = 0x7f020000
+org.opencv.samples.colorblobdetect:styleable/CameraBridgeViewBase = 0x7f060000
+org.opencv.samples.colorblobdetect:attr/show_fps = 0x7f010001
+org.opencv.samples.colorblobdetect:id/messageTextView = 0x7f030004
+org.opencv.samples.colorblobdetect:layout/color_blob_detection_surface_view = 0x7f040000
+org.opencv.samples.colorblobdetect:string/app_name = 0x7f050000
+org.opencv.samples.colorblobdetect:id/back = 0x7f030001
+org.opencv.samples.colorblobdetect:attr/camera_id = 0x7f010000

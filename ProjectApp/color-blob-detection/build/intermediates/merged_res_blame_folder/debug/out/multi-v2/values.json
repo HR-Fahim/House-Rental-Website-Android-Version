@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "org.opencv.samples.colorblobdetect.color-blob-detection-mergeDebugResources-3:/values/values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Asus\\Desktop\\IDE\\ProjectApp\\color-blob-detection\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "61",
+                        "endOffsets": "112"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Asus\\Desktop\\IDE\\ProjectApp\\opencv-sdk\\build\\intermediates\\packaged_res\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "24",
+                        "endOffsets": "361"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "117",
+                        "endLines": "10",
+                        "endColumns": "24",
+                        "endOffsets": "423"
+                    }
+                }
+            ]
+        }
+    ]
+}

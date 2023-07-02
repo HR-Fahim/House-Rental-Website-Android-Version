@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Add the path or shape for your direction arrow -->
+    <!-- For example, you can use a triangle shape pointing in a specific direction -->
+    <path
+        android:fillColor="#FF0000"
+        android:pathData="M12,2L22,22L2,22Z" />
+
+</vector>

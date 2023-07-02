@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\7.4\\org.opencv.samples.colorblobdetect.color-blob-detection-merged_res-5:\\drawable_icon.png.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\7.4\\org.opencv.samples.colorblobdetect.color-blob-detection-color-blob-detection-6:\\drawable\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\7.4\\org.opencv.samples.colorblobdetect.color-blob-detection-merged_res-5:\\layout_color_blob_detection_surface_view.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\7.4\\org.opencv.samples.colorblobdetect.color-blob-detection-color-blob-detection-6:\\layout\\color_blob_detection_surface_view.xml"
+    },
+    {
+        "merged": "org.opencv.samples.colorblobdetect.color-blob-detection-merged_res-5:/layout_color_blob_detection_surface_view.xml.flat",
+        "source": "org.opencv.samples.colorblobdetect.color-blob-detection-color-blob-detection-6:/layout/color_blob_detection_surface_view.xml"
+    }
+]

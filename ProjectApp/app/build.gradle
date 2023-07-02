@@ -1,0 +1,129 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.hrfahim.projectapp"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            jniLibs.srcDirs = ['jniLibs']
+            //jniLibs.srcDirs += 'src/main/jniLibs'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth:21.0.3'
+    implementation 'com.google.firebase:firebase-storage:20.2.0'
+    implementation 'com.google.firebase:firebase-database:20.2.1'
+    implementation 'androidx.privacysandbox.ads:ads-adservices:+'
+    implementation 'com.google.ads.interactivemedia.v3:interactivemedia:3.27.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation project(path: ':opencv-sdk')
+    implementation 'androidx.camera:camera-core:1.0.2'
+    implementation 'androidx.camera:camera-lifecycle:1.0.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+    // implementation 'org.opencv:opencv-android:4.7.0'
+    // implementation project(':opencv')
+    // implementation 'org.opencv:opencv-sdk:3.4.0'
+    // implementation project(':libs')
+
+    implementation 'com.google.ar:core:1.26.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
+    //implementation 'cn.easyar:EasyAR:2.3.1'
+    //implementation 'com.vuforia:vuforia-sdk-android:10.15.3'
+    //implementation 'org.opencv:opencv-android:4.5.4'
+
+    implementation files('libs/B4AEasyAR.jar')
+    implementation files('libs/VuforiaEngine.jar')
+    implementation files('libs/armeabi-v7a/libVuforiaEngine.so')
+    implementation files('libs/arm64-v8a/libVuforiaEngine.so')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'jniLibs', include: ['*.h'])
+    implementation fileTree(dir: 'jniLibs', include: ['*.cmake'])
+    implementation fileTree(dir: 'jniLibs', include: ['*.mk'])
+    implementation fileTree(dir: 'libs', include: ['*.so'])
+    //implementation project(':java')
+    //implementation project(':java-opencv')
+    //implementation project(':OpenCV-android-sdk')
+    //implementation project(':color-blob-detection')
+    //implementation project(':camera-calibration')
+
+    //implementation project(':opencv-sdk')
+    //implementation fileTree(':samples:sdk-video360')
+    //implementation fileTree(':samples:sdk-controllerclient')
+    //implementation fileTree(':samples:sdk-videoplayer')
+    //implementation fileTree(':samples:sdk-hellovr')
+
+    //implementation 'com.google.vr:sdk-base:1.20.0'
+    //implementation 'com.google.vr:sdk-common:1.20.0'
+    implementation 'com.google.vr:sdk-panowidget:1.20.0'
+    //implementation 'com.google.vr:sdk-videowidget:1.20.0'
+    //implementation 'com.google.vr:sdk-widgets:1.20.0'
+
+    //testImplementation 'junit:junit:4.13.2'
+    //androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    //androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //implementation 'com.google.vr:sdk-base:1.210.0'
+    //implementation 'com.google.vr:sdk-common:1.210.0'
+    //implementation 'com.google.vr:sdk-panowidget:1.210.0'
+
+    implementation ('com.google.firebase:firebase-auth:21.0.3') {
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+    }
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+    implementation ('com.google.firebase:firebase-storage:20.2.0') {
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+    }
+    implementation ('com.google.firebase:firebase-database:20.2.1') {
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+    }
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+

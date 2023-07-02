@@ -1,0 +1,36 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+rootProject.name = "ProjectApp"
+include ':app'
+include ':samples:sdk-video360'
+include ':samples:sdk-controllerclient'
+include ':samples:sdk-videoplayer'
+include ':samples:sdk-hellovr'
+
+//include ':color-blob-detection'
+
+include ':opencv'
+include ':libs'
+
+include ':VuforiaSamples'
+include ':color-blob-detection'
+include ':15-puzzle'
+include ':camera-calibration'
+include ':opencv'
+
+//include ':java-opencv'
+include ':opencv-sdk'
+include ':OpenCV-android-sdk'

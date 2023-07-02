@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hrfahim.projectapp">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera.ar" android:required="true" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <meta-data
+        android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+        android:value="com.google.firebase.components.ComponentRegistrar" />
+    <meta-data
+        android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+        android:value="com.google.firebase.components.ComponentRegistrar" />
+    <meta-data
+        android:name="com.vuforia.API_KEY"
+        android:value="AQAbbf7/////AAABmecIpb8BUk4MgCqxivozYsCJYI+Ylba9t5GYRWmXsWVkYFWthJL5O+HUIMiI3wjtWXx9/PRHwbbBLMvocgQXzOyyPZSC22OSLgOp4S4BLGA/W7q/bHkUlPY5XBZp+mWu6MqwKQyCgHWzuG8S5d4uyLX2YMxp1ALppES8XWika6qvtsBKYVwf/1P0AnbuRjY6dIWChv+67l/QIAYiej0nNfit3IM4LipN9QA+iGvQZSb4kBjn9hubg4yeEyDufQLqpaxRFfmT85cxLr2S464u3GEjhffRI9qabS07yZG+BNNDALefyTx8+74L8CuAkkwWKFJEMARH5G6Yci5IWHhyHPbtn91bSBRyOZfL5hgQfFfr" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProjectApp"
+        tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC4_c5XTO18T6AywV74G4JBH0hJ8QUQwk8" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CameraActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".DetailsActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".CameraVRActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".CameraARActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".MapActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".CameraVRModifiedActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

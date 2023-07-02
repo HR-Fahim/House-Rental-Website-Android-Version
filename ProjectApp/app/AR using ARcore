@@ -1,0 +1,231 @@
+.java-----
+
+package com.hrfahim.projectapp;
+
+import android.Manifest;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import com.google.ar.core.ArCoreApk;
+import com.google.ar.core.Config;
+import com.google.ar.core.Frame;
+import com.google.ar.core.Pose;
+import com.google.ar.core.Session;
+import com.google.ar.core.TrackingState;
+import com.google.ar.core.exceptions.CameraNotAvailableException;
+import com.google.ar.core.exceptions.UnavailableArcoreNotInstalledException;
+
+public class CameraARActivity extends AppCompatActivity {
+    private static final int CAMERA_PERMISSION_CODE = 1;
+    private static final String FILENAME = "ARImage.jpg";
+    private static final int REQUEST_CODE_IMAGE_CAPTURE = 2;
+
+    private FrameLayout arContainer;
+    private Button btnOpenCamera;
+
+    private Session arSession;
+    private boolean userRequestedInstall = true;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_camera_ar);
+
+        arContainer = findViewById(R.id.arContainer);
+        btnOpenCamera = findViewById(R.id.btnOpenCamera);
+
+        // Check for ARCore availability
+        ArCoreApk.Availability availability = ArCoreApk.getInstance().checkAvailability(this);
+        if (availability.isTransient()) {
+            // ARCore installation or update in progress.
+            Toast.makeText(this, "ARCore installation or update in progress.", Toast.LENGTH_SHORT).show();
+        }
+        if (availability.isSupported()) {
+            // ARCore is supported on this device.
+            arContainer.post(this::initializeARSession);
+        } else {
+            // ARCore is not supported on this device.
+            Toast.makeText(this, "ARCore is not supported on this device.", Toast.LENGTH_SHORT).show();
+        }
+
+        btnOpenCamera.setOnClickListener(v -> {
+            if (ContextCompat.checkSelfPermission(CameraARActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                openCamera();
+            } else {
+                ActivityCompat.requestPermissions(CameraARActivity.this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_CODE);
+            }
+        });
+    }
+
+    private void initializeARSession() {
+        ArCoreApk.Availability availability = ArCoreApk.getInstance().checkAvailability(this);
+        if (availability.isTransient()) {
+            // ARCore installation or update in progress.
+            Toast.makeText(this, "ARCore installation or update in progress.", Toast.LENGTH_SHORT).show();
+        }
+        if (availability.isSupported()) {
+            try {
+                arSession = new Session(this);
+                Config config = new Config(arSession);
+                arSession.configure(config);
+                arSession.resume();
+            } catch (UnavailableArcoreNotInstalledException e) {
+                e.printStackTrace();
+                showARCoreInstallDialog();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Failed to initialize AR session.", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            // ARCore is not supported on this device.
+            Toast.makeText(this, "ARCore is not supported on this device.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void showARCoreInstallDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("ARCore Not Installed");
+        builder.setMessage("ARCore is required to run this application. Please install ARCore from the Google Play Store.");
+        builder.setPositiveButton("Install", (dialog, which) -> {
+            // Open Google Play Store to install ARCore.
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("market://details?id=com.google.ar.core"));
+            startActivity(intent);
+            dialog.dismiss();
+        });
+        builder.setNegativeButton("Cancel", (dialog, which) -> {
+            // User declined installation, so finish the activity.
+            finish();
+        });
+        builder.setCancelable(false);
+        builder.show();
+    }
+
+
+    private void openCamera() {
+        try {
+            arSession.resume();
+        } catch (CameraNotAvailableException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Camera is not available.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void autoCapturePhoto() {
+        try {
+            Frame frame = arSession.update();
+            if (frame.getCamera().getTrackingState() == TrackingState.TRACKING) {
+                Pose pose = frame.getCamera().getDisplayOrientedPose();
+
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, FILENAME);
+                contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+
+                ContentResolver resolver = getContentResolver();
+                Uri imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+
+                // Save the image using AR data or perform additional processing here
+
+                Toast.makeText(this, "Image saved to gallery.", Toast.LENGTH_SHORT).show();
+            }
+        } catch (CameraNotAvailableException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Camera is not available.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == CAMERA_PERMISSION_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openCamera();
+            } else {
+                Toast.makeText(this, "Camera permission denied.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (arSession != null) {
+            try {
+                arSession.resume();
+            } catch (CameraNotAvailableException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Camera is not available.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (arSession != null) {
+            arSession.pause();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (arSession != null) {
+            arSession.close();
+            arSession = null;
+        }
+    }
+}
+
+.xml-----
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnOpenCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Open Camera" />
+
+    <FrameLayout
+        android:id="@+id/arContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
+
+ARcore Manifest.xml-----
+
+<uses-feature android:name="android.hardware.camera.ar" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <meta-data
+                android:name="com.google.ar.core"
+                android:value="required" />

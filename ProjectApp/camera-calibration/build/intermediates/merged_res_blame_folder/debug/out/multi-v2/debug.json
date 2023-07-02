@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "org.opencv.samples.cameracalibration.camera-calibration-merged_res-5:/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Asus\\Desktop\\IDE\\ProjectApp\\camera-calibration\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,12,5,9,10,7,11,14,13,8,15,6",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "119,58,647,174,384,487,280,577,755,702,330,801,226",
+                        "endColumns": "54,59,54,51,102,89,49,69,45,52,53,51,53",
+                        "endOffsets": "169,113,697,221,482,572,325,642,796,750,379,848,275"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,110,170,225,277,380,470,520,590,636,689,743,795",
+                        "endColumns": "54,59,54,51,102,89,49,69,45,52,53,51,53",
+                        "endOffsets": "105,165,220,272,375,465,515,585,631,684,738,790,844"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Asus\\Desktop\\IDE\\ProjectApp\\opencv-sdk\\build\\intermediates\\packaged_res\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "24",
+                        "endOffsets": "361"
+                    },
+                    "to": {
+                        "startLines": "15",
+                        "startColumns": "4",
+                        "startOffsets": "849",
+                        "endLines": "22",
+                        "endColumns": "24",
+                        "endOffsets": "1155"
+                    }
+                }
+            ]
+        }
+    ]
+}
